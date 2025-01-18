@@ -9,5 +9,13 @@
   },
   "permissions": [
     "bookmarks"
-  ]
+  ],
+  "commands": {
+    "focus-search": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Focus the search input"
+    }
+  }
 }

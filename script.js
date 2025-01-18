@@ -2,11 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
     searchInput.focus();
-    // get bookmarks
-    chrome.bookmarks.getTree((bookmarkTreeNodes) => {
-        console.log('Bookmarks:', bookmarkTreeNodes);
-      });
-      
     const performSearch = () => {
         const query = searchInput.value.trim(); // Get and trim input value
         if (query) {
@@ -28,3 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
