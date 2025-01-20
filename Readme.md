@@ -20,7 +20,7 @@ This is a custom new tab page for Chrome. It replaces the default new tab page w
 
 - it searches bookmarks in the chrome bookmarks if only one bookmark is found it opens it in a current tab
 - if multiple bookmarks are found it opens a dropdown to select the bookmark
-- if no bookmarks are found it opens a search bar
-- if the search bar is empty it opens a search bar
-- if the search bar is not empty it searches the bookmarks
+- if you want to search in google just start by typing ! in the start
+  ex - "!weather today in india"
+  
 
