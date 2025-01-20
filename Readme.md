@@ -18,9 +18,9 @@ This is a custom new tab page for Chrome. It replaces the default new tab page w
 ## Features
 
 
-- it searches bookmarks in the chrome bookmarks if only one bookmark is found it opens it in a current tab
-- if multiple bookmarks are found it opens a dropdown to select the bookmark
-- if you want to search in google just start by typing ! in the start
+- it searches bookmarks in the chrome bookmarks if only one bookmark is found it opens it in a current tab.
+- if multiple bookmarks are found it opens a dropdown to select the bookmark.
+- if you want to search in google just start by typing ! in the start. <br/>
   ex - "!weather today in india"
   
 
