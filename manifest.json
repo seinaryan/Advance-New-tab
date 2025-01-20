@@ -1,21 +1,13 @@
 {
   "manifest_version": 3,
-  "name": "Custom New Tab Page",
+  "name": "Custom New Tab",
+  "description": "A custom new tab page with a search bar and bookmarks.",
   "version": "1.0",
-  "description": "Replace the default new tab page with a custom page.",
-  "author": "Your Name",
+  "permissions": ["bookmarks"],
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "permissions": [
-    "bookmarks"
-  ],
-  "commands": {
-    "focus-search": {
-      "suggested_key": {
-        "default": "Ctrl+Shift+L"
-      },
-      "description": "Focus the search input"
-    }
-  }
+  "host_permissions": [
+    "*://*/*"
+  ]
 }

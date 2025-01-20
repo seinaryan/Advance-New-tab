@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Automatically focus the search bar when the page loads
+    const searchInput = document.getElementById("searchInput");
+    if (searchInput) {
+        setTimeout(() => {
+            searchInput.focus();
+        }, 100);
+    }
+
     // Function to toggle dropdown visibility
     window.toggleDropdown = function () {
         const dropdown = document.getElementById("drop-down-content");
@@ -33,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to filter bookmarks based on search input
-    document.getElementById("searchInput").addEventListener("input", function (event) {
+    searchInput.addEventListener("input", function (event) {
         const filter = event.target.value.toLowerCase();
         const items = document.querySelectorAll(".bookmark-item");
         let visibleItems = 0;
@@ -55,13 +63,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Function to handle "!" for Google search
-    document.getElementById("searchInput").addEventListener("keydown", function (event) {
-        const inputValue = event.target.value.trim();
-        if (inputValue.startsWith("!") && event.key === "Enter") {
-            const query = inputValue.slice(1).trim(); // Remove "!" from the query
-            if (query) {
-                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+    // Handle "Enter" key behavior
+    searchInput.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            const inputValue = event.target.value.trim();
+            const visibleItems = document.querySelectorAll(".bookmark-item:not([style*='display: none'])").length;
+
+            // If input starts with "!", perform a Google search directly
+            if (inputValue.startsWith("!")) {
+                const query = inputValue.slice(1).trim();
+                if (query) {
+                    window.location.href = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+                }
+            }
+            // If no visible bookmarks, perform a Google search with the input text
+            else if (visibleItems === 0 && inputValue) {
+                window.location.href = `https://www.google.com/search?q=${encodeURIComponent(inputValue)}`;
             }
         }
     });
