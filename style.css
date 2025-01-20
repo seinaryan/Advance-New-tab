@@ -83,13 +83,3 @@ body {
     color: #fff;
 }
 
-/* Centered layout for mobile responsiveness */
-@media (max-width: 768px) {
-    .drop-down-menu {
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-}
